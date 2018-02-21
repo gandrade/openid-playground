@@ -1,0 +1,15 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id:
+            client-secret:
+        provider:
+          keycloak:
+            authorization-uri:
+            token-uri:
+            user-info-uri:
+            jwk-set-uri:
+
