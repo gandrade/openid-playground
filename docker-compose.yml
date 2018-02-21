@@ -1,0 +1,10 @@
+version: "3.5"
+services:
+  keycloak:
+    image: jboss/keycloak
+    command: ["-Djboss.socket.binding.port-offset=1000"]
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+    ports:
+      - 8180:8180
