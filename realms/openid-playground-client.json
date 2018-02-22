@@ -1,0 +1,8 @@
+{
+  "realm": "openid-playground",
+  "auth-server-url": "http://192.168.99.101:9080/auth",
+  "ssl-required": "external",
+  "resource": "openid-playground-client",
+  "public-client": true,
+  "confidential-port": 0
+}

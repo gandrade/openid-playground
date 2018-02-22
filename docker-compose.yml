@@ -2,7 +2,9 @@ version: "3.5"
 services:
   keycloak:
     image: jboss/keycloak
-    command: ["-b", "0.0.0.0", "-Djboss.socket.binding.port-offset=1000"]
+    command: ["-b", "0.0.0.0", "-Djboss.socket.binding.port-offset=1000", "-Dkeycloak.migration.action=import", "-Dkeycloak.migration.provider=dir", "-Dkeycloak.migration.dir=/opt/jboss/keycloak/realm-config", "-Dkeycloak.migration.strategy=OVERWRITE_EXISTING"]
+    volumes:
+      - ./realms/openid-playground-client.json:/opt/jboss/keycloak/realm-config
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
